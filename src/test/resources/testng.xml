@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="My First Suite" verbose="1">
+<parameter name="totoUsername" value="qwert_y"></parameter>
+<parameter name="totoPassword" value="Tiko8520"></parameter>
+<parameter name="totoFakeUsername" value="qwerty_qwer123"></parameter>
+<parameter name="totoFakePassword" value="Qatest2019"></parameter>
+<parameter name="fbUsername" value="tiko.tumasyan@hotmail.com"></parameter>
+<parameter name="fbPassword" value="Qa  2019"></parameter>
+	<test name="First Test Example">
+		<classes>
+			<class name="am.qa.totogaming.tests.menus.TotogamingSocialMediaMenu" />
+		</classes>
+	</test>
+</suite>
