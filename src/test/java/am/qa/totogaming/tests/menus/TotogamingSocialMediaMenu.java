@@ -40,8 +40,7 @@ public class TotogamingSocialMediaMenu extends TotogamingBaseTest {
 		guest.openYoutubeTotoPage();
 		ArrayList<String> promoTab = new ArrayList<String>(driver.getWindowHandles());
 		driver.switchTo().window(promoTab.get(1));
-		DriverUtil.waitForElementPresent(driver, 3,
-				"//h1[@id='channel-title-container']//span[contains(text(), 'TOTO')]");
+		DriverUtil.waitForElementPresent(driver, 3,"//h1[@id='channel-title-container']//span[contains(text(), 'TOTO')]");
 		driver.close();
 		driver.switchTo().window(promoTab.get(0));
 	}
