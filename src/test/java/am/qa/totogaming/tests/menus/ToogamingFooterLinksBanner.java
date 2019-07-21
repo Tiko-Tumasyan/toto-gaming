@@ -144,7 +144,7 @@ public class ToogamingFooterLinksBanner extends TotogamingBaseTest{
 	public void footerFastGamesTest(){
 		TotoGuestPage guest = new TotoGuestPage(driver);
 		FooterFastGamesPage guestFastGames = guest.openFooterFastGamesPage();
-		DriverUtil.waitForElementPresent(driver, 3, "//button[text()='TV Games' and contains(@class, 'active')]");
+		DriverUtil.waitForElementPresent(driver, 3, "//a[text()='Fast Games' and contains(@class, 'active')]");
 		DriverUtil.waitForElementPresent(driver, 3, "//div[@id='golden-race-desktop-app']");
 		guestFastGames.footerFastGamesBackToHomePage();
 		DriverUtil.waitForElementPresent(driver, 3, "//div[@class='toto_landint_container']");

@@ -36,22 +36,22 @@ import am.qa.totogaming.util.DriverUtil;
 
 public class TotogamingMainButtonsMenu extends TotogamingBaseTest{
 	
-//	@Test
+	@Test
 	public void testSportsButton() {
 		
 		TotoGuestPage guest = new TotoGuestPage(driver);
 		
 		TotoSportsPage sportsPage = guest.openSportsPage();
 		
-		DriverUtil.waitForElementPresent(driver, 3, "//a[@id='mainSportBtn' and contains(@class, 'active')]");//div[contains(@class, 'home_page_left_panel')]
-		
+		DriverUtil.waitForElementPresent(driver, 3, "//a[@id='mainSportBtn' and contains(@class, 'active')]");
+		DriverUtil.waitForElementPresent(driver, 3, "//div[@id='live_betting']");
 		
 		sportsPage.sportsBackToHomePage();
 		
 		DriverUtil.waitForElementPresent(driver, 3, "//div[@class='tl_header_bot_row_fix flex']");
 	}
 	
-//	@Test(dependsOnMethods = { "testSportsButton" })
+	@Test
 	public void testLiveButton() {
 		
 		TotoGuestPage guest = new TotoGuestPage(driver);
@@ -59,119 +59,122 @@ public class TotogamingMainButtonsMenu extends TotogamingBaseTest{
 		TotoLivePage livePage = guest.openLivePage();
 		
 		DriverUtil.waitForElementPresent(driver, 3, "//a[@id='mainLiveBtn' and contains(@class, 'active')]");
-		
+		DriverUtil.waitForElementPresent(driver, 3, "//div[@id='LivePage']");
 		livePage.liveBackToHomePage();
 		
 		DriverUtil.waitForElementPresent(driver, 3, "//div[@class='tl_header_bot_row_fix flex']");
 	}
 	
-//	@Test(dependsOnMethods = { "testLiveButton" })
+	@Test
 	public void testCasinoButton() {
 		
 		TotoGuestPage guest = new TotoGuestPage(driver);
 		TotoCasinoPage casinoPage = guest.openCasinoPage();
 		
 		DriverUtil.waitForElementPresent(driver, 3, "//a[@class='active navItem' and text()='Casino']");
+		DriverUtil.waitForElementPresent(driver, 3, "//div[@class='tl_games flex']");
 		
 		casinoPage.casinoBackToHomePage();
 		
 		DriverUtil.waitForElementPresent(driver, 3, "//div[@class='tl_header_bot_row_fix flex']");
 	}
 	
-//	@Test(dependsOnMethods = { "testCasinoButton" })
+	@Test
 	public void testEvolutionLiveCasinoButton() {
 		
 		TotoGuestPage guest = new TotoGuestPage(driver);
 		guest.openLiveCasinoDropDown();
 		
 		TotoEvolutionLiveCasinoPage evolutionLiveCasinoPage = guest.openEvolutionLiveCasinoPage();
-//		DriverUtil.waitForElementPresent(driver, 20, "//div[contains(@class, 'TablesWrapper')]");
+		DriverUtil.waitForElementPresent(driver, 3, "//button[contains(@class , 'active') and text()='Live Casino']");
+		DriverUtil.waitForElementPresent(driver, 5, "//div[@class='evolutionFrame_block']");
+		
 		evolutionLiveCasinoPage.evolutionLiveCasinoBackToHomePage();
 		
 		DriverUtil.waitForElementPresent(driver, 3, "//div[@class='tl_header_bot_row_fix flex']");
 	}
 	
-//	@Test(dependsOnMethods = { "testEvolutionLiveCasinoButton" })
+	@Test
 	public void testLuckyStreakLiveCasinoButton() {
-//		?????????????????????????????????????????????????
+		
 		TotoGuestPage guest = new TotoGuestPage(driver);
 		guest.openLiveCasinoDropDown();
 		
 		TotoLuckyStreakLiveCasinoPage luckyStreakLiveCasinoPage = guest.openLuckyStreakLiveCasinoPage();
+		DriverUtil.waitForElementPresent(driver, 3, "//button[contains(@class , 'active') and text()='Live Casino']");
+		DriverUtil.waitForElementPresent(driver, 5, "//iframe[@id='_luckyStreakFrame']");
+		
 		luckyStreakLiveCasinoPage.luckyStreakLiveCasinoBackToHomePage();
 		
 		DriverUtil.waitForElementPresent(driver, 3, "//div[@class='tl_header_bot_row_fix flex']");
 	}
 	
-//	@Test(dependsOnMethods = { "testLuckyStreakLiveCasinoButton" })
+	@Test// ???
 	public void testLucky7Button() {
 		
 		TotoGuestPage guest = new TotoGuestPage(driver);
 		guest.openTvGamesDropDown();
 		
-//		DriverUtil.waitForElementPresent(driver, 3, "//div[contains(@class, 'active')]/div[text()='Lucky 7']");
-		
 		TotoLucky7Page lucky7Page = guest.openTotoLucky7Page();
+//		DriverUtil.waitForElementPresent(driver, 6, "//div[@data-qa='button-game-menu-1']");
+		DriverUtil.waitForElementPresent(driver, 3, "//iframe[@id='betgames_iframe_1']");
+		
 		lucky7Page.lucky7BackToHomePage();
 		
 		DriverUtil.waitForElementPresent(driver, 3, "//div[@class='tl_header_bot_row_fix flex']");
 	}
 	
-//	@Test(dependsOnMethods = { "testLucky7Button" })
+	@Test// ???
 	public void testLucky6Button() {
 		
 		TotoGuestPage guest = new TotoGuestPage(driver);
 		guest.openTvGamesDropDown();
 		
-//		DriverUtil.waitForElementPresent(driver, 3, "//div[contains(@class, 'active')]/div[text()='Lucky 6']");
-		
 		TotoLucky6Page lucky6Page = guest.openTotoLucky6Page();
+		DriverUtil.waitForElementPresent(driver, 3, "//iframe[@id='betgames_iframe_1']");
 		lucky6Page.lucky6BackToHomePage();
 		
 		DriverUtil.waitForElementPresent(driver, 3, "//div[@class='tl_header_bot_row_fix flex']");
 		
 	}
 	
-//	@Test(dependsOnMethods = { "testLucky6Button" })
+	@Test// ???
 	public void testLucky5Button() {
 		
 
 		TotoGuestPage guest = new TotoGuestPage(driver);
 		guest.openTvGamesDropDown();
 		
-//		DriverUtil.waitForElementPresent(driver, 3, "//div[contains(@class, 'active')]/div[text()='Lucky 5']");
-		
 		TotoLucky5Page lucky5Page = guest.openTotoLucky5Page();
+		DriverUtil.waitForElementPresent(driver, 3, "//iframe[@id='betgames_iframe_1']");
 		lucky5Page.lucky5BackToHomePage();
 		
 		DriverUtil.waitForElementPresent(driver, 3, "//div[@class='tl_header_bot_row_fix flex']");
 		
 	}
 	
-//	@Test(dependsOnMethods = { "testLucky5Button" })
+	@Test// ???
 	public void testDiceButton() {
 		
 		TotoGuestPage guest = new TotoGuestPage(driver);
 		guest.openTvGamesDropDown();
 		
-//		DriverUtil.waitForElementPresent(driver, 3, "//div[contains(@class, 'active')]/div[text()='Dice']");
-		
 		TotoDicePage dicePage = guest.openTotoDicePage();
+		DriverUtil.waitForElementPresent(driver, 3, "//iframe[@id='betgames_iframe_1']");
 		dicePage.diceBackToHomePage();
 		
 		DriverUtil.waitForElementPresent(driver, 3, "//div[@class='tl_header_bot_row_fix flex']");
 		
 	}
 	
-//	@Test(dependsOnMethods = { "testDiceButton" })
+	@Test// ???
 	public void testDiceDuelButton() {
 		
 		TotoGuestPage guest = new TotoGuestPage(driver);
 		guest.openTvGamesDropDown();
 		
-//		DriverUtil.waitForElementPresent(driver, 3, "//div[contains(@class, 'active')]/div[text()='Dice Duel']");
-		
 		TotoDiceDuelPage diceDuelPage = guest.openTotoDiceDuelPage();
+		DriverUtil.waitForElementPresent(driver, 3, "//iframe[@id='betgames_iframe_1']");
 		diceDuelPage.diceDuelBackToHomePage();
 		
 		DriverUtil.waitForElementPresent(driver, 3, "//div[@class='tl_header_bot_row_fix flex']");
@@ -179,119 +182,112 @@ public class TotogamingMainButtonsMenu extends TotogamingBaseTest{
 		
 	}
 	
-//	@Test(dependsOnMethods = { "testDiceDuelButton" })
+	@Test// ???
 	public void testWheelButton() {
 		
 		TotoGuestPage guest = new TotoGuestPage(driver);
 		guest.openTvGamesDropDown();
 		
-//		DriverUtil.waitForElementPresent(driver, 3, "//div[contains(@class, 'active')]/div[text()='Wheel']");
-		
 		TotoWheelPage wheelPage = guest.openTotoWheelPage();
+		DriverUtil.waitForElementPresent(driver, 3, "//iframe[@id='betgames_iframe_1']");
 		wheelPage.wheelBackToHomePage();
 		
 		DriverUtil.waitForElementPresent(driver, 3, "//div[@class='tl_header_bot_row_fix flex']");
 		
 	}
 	
-//	@Test(dependsOnMethods = { "testWheelButton" })
+	@Test// ???
 	public void testBetOnPokerButton() {
 		
 		TotoGuestPage guest = new TotoGuestPage(driver);
 		guest.openTvGamesDropDown();
 		
-//		DriverUtil.waitForElementPresent(driver, 3, "//div[contains(@class, 'active')]/div[text()='Bet On Poker']");
-		
 		TotoBetOnPokerPage betOnPokerPage = guest.openTotoBetOnPokerPage();
+		DriverUtil.waitForElementPresent(driver, 3, "//iframe[@id='betgames_iframe_1']");
 		betOnPokerPage.betOnPokerBackToHomePage();
 		
 		DriverUtil.waitForElementPresent(driver, 3, "//div[@class='tl_header_bot_row_fix flex']");
 		
 	}
 	
-//	@Test(dependsOnMethods = { "testBetOnPokerButton" })
+	@Test// ???
 	public void testBaccaratButton() {
 		
 		TotoGuestPage guest = new TotoGuestPage(driver);
 		guest.openTvGamesDropDown();
 		
-//		DriverUtil.waitForElementPresent(driver, 3, "//div[contains(@class, 'active')]/div[text()='Baccarat']");
-		
 		TotoBaccaratPage baccaratPage = guest.openTotoBaccaratPage();
+		DriverUtil.waitForElementPresent(driver, 3, "//iframe[@id='betgames_iframe_1']");
 		baccaratPage.baccaratBackToHomePage();
 		
 		DriverUtil.waitForElementPresent(driver, 3, "//div[@class='tl_header_bot_row_fix flex']");
 		
 	}
 	
-//	@Test(dependsOnMethods = { "testBaccaratButton" })
+	@Test// ???
 	public void testWarOfBetsButton() {
 		
 		TotoGuestPage guest = new TotoGuestPage(driver);
 		guest.openTvGamesDropDown();
 		
-//		DriverUtil.waitForElementPresent(driver, 3, "//div[contains(@class, 'active')]/div[text()='War of Bets']");
-		
 		TotoWarOfBetsPage warOfBetsPage = guest.openTotoWarOfBetsPage();
+		DriverUtil.waitForElementPresent(driver, 3, "//iframe[@id='betgames_iframe_1']");
 		warOfBetsPage.warOfBetsBackToHomePage();
 		
 		DriverUtil.waitForElementPresent(driver, 3, "//div[@class='tl_header_bot_row_fix flex']");
 		
 	}
 	
-//	@Test(dependsOnMethods = { "testWarOfBetsButton" })
+	@Test// ???
 	public void testSportLoto5From36Button() {
 		
 		TotoGuestPage guest = new TotoGuestPage(driver);
 		guest.openTvGamesDropDown();
 		
-//		DriverUtil.waitForElementPresent(driver, 3, "//li[contains(@class, 'active')]//span[contains(text(), 'Sportloto 5 from 36')]");
-		
 		TotoSportLoto5From36Page sportLoto5From36Page = guest.openTotoSportLoto5From36Page();
+		DriverUtil.waitForElementPresent(driver, 3, "//div[@id='superloto_div_iframe']");
 		sportLoto5From36Page.sportLoto5BackToHomePage();
 		
 		DriverUtil.waitForElementPresent(driver, 3, "//div[@class='tl_header_bot_row_fix flex']");
 		
 	}
 	
-//	@Test(dependsOnMethods = { "testSportLoto5From36Button" })
+	@Test// ???
 	public void testSportLoto7From42Button() {
 		
 		TotoGuestPage guest = new TotoGuestPage(driver);
 		guest.openTvGamesDropDown();
 		
-//		DriverUtil.waitForElementPresent(driver, 3, "//li[contains(@class, 'active')]//span[contains(text(), 'Sportloto 7 from 42')]");
-		
 		TotoSportLoto7From42Page sportLoto7From42Page = guest.openTotoSportLoto7From42Page();
+		DriverUtil.waitForElementPresent(driver, 3, "//div[@id='superloto_div_iframe']");
 		sportLoto7From42Page.sportLoto7BackToHomePage();
 		
 		DriverUtil.waitForElementPresent(driver, 3, "//div[@class='tl_header_bot_row_fix flex']");
 		
 	}
 	
-//	@Test(dependsOnMethods = { "testSportLoto7From42Button" })
+	@Test//???
 	public void testSuperJackpotButton() {
 		
 		TotoGuestPage guest = new TotoGuestPage(driver);
 		guest.openTvGamesDropDown();
 		
-//		DriverUtil.waitForElementPresent(driver, 3, "//li[contains(@class, 'active')]//span[contains(text(), 'Superjackpot')]");
-		
 		TotoSuperJackpotPage superJackpotPage = guest.openTotoSuperJackpotPage();
+		DriverUtil.waitForElementPresent(driver, 3, "//div[@id='superloto_div_iframe']");
 		superJackpotPage.superJackpotBackToHomePage();
 		
 		DriverUtil.waitForElementPresent(driver, 3, "//div[@class='tl_header_bot_row_fix flex']");
 		
 	}
 	
-//	@Test(dependsOnMethods = { "testSuperJackpotButton" })
+	@Test 
 	public void testFastGamesButton() {
 		
 		TotoGuestPage guest = new TotoGuestPage(driver);
 		
-		DriverUtil.waitForElementPresent(driver, 3, "//a[@class='navItem active' and text()='Fast games']");
-		
 		TotoFastGamesPage fastGamesPage = guest.openFastGamesPage();
+		DriverUtil.waitForElementPresent(driver, 3, "//a[text()='Fast games' and contains(@class, 'active')]");
+		DriverUtil.waitForElementPresent(driver, 3, "//div[@id='golden-race-desktop-app']");
 		fastGamesPage.fastGamesBackToHomePage();
 		
 		DriverUtil.waitForElementPresent(driver, 3, "//div[@class='tl_header_bot_row_fix flex']");
@@ -300,7 +296,6 @@ public class TotogamingMainButtonsMenu extends TotogamingBaseTest{
 	@Parameters({"totoUsername", "totoPassword"})
 //	@Test(dependsOnMethods = { "testFastGamesButton" })
 	public void testPokerButton(String totoUsername, String totoPassword) {
-//		inchvor zibil, anhaskanali pahvacq
 //		TotoGuestPage guest = new TotoGuestPage(driver);
 //		guest.openPokerPage();
 //		TotoLoginWindow totoLoginWindow = new TotoLoginWindow(driver);
@@ -321,26 +316,29 @@ public class TotogamingMainButtonsMenu extends TotogamingBaseTest{
 //		pokerPage.clickOnPokerLogin();
 	}
 	
-//	@Test(dependsOnMethods = { "testPokerButton" })
+	@Test
 	public void testBeloteButton() {
 		
 		TotoGuestPage guest = new TotoGuestPage(driver);
 		guest.openGamesDropDown();
 		TotoBelotePage belotePage = guest.openBelotePage();
-//		DriverUtil.waitForElementPresent(driver, 5, "//a[@id='belote-lottery']");
+		DriverUtil.waitForElementPresent(driver, 3, "//button[text()='Games' and contains(@class, 'active')]");
+		DriverUtil.waitForElementPresent(driver, 5, "//iframe[@id='beloteFrame']");
+		
 		belotePage.beloteBackToHomePage();
 		
 		DriverUtil.waitForElementPresent(driver, 3, "//div[@class='tl_header_bot_row_fix flex']");
 		
 	}
-//	
-//	@Test(dependsOnMethods = { "testBeloteButton" })
+	
+	@Test
 	public void testBackgammonButton() {
 		
 		TotoGuestPage guest = new TotoGuestPage(driver);
 		guest.openGamesDropDown();
 		TotoBackgammonPage backgammonPage = guest.openBackgammonPage();
-//		DriverUtil.waitForElementPresent(driver, 5, "//div[contains(text(), 'Short')]");
+		DriverUtil.waitForElementPresent(driver, 3, "//button[text()='Games' and contains(@class, 'active')]");
+		DriverUtil.waitForElementPresent(driver, 5, "//iframe[@class='backgammon_p2p']");
 		backgammonPage.backgammonBackToHomePage();
 		
 		DriverUtil.waitForElementPresent(driver, 3, "//div[@class='tl_header_bot_row_fix flex']");
@@ -348,80 +346,84 @@ public class TotogamingMainButtonsMenu extends TotogamingBaseTest{
 		
 	}
 	
-//	@Test(dependsOnMethods = { "testBackgammonButton" })
+	@Test
 	public void testToto21Button() {
 		
 		TotoGuestPage guest = new TotoGuestPage(driver);
 		guest.openGamesDropDown();
 		TotoToto21Page toto21Page = guest.openToto21Page();
-//		DriverUtil.waitForElementPresent(driver, 5, "//div[contains(text(), 'TOTO 21')]");
+		DriverUtil.waitForElementPresent(driver, 3, "//button[text()='Games' and contains(@class, 'active')]");
+		DriverUtil.waitForElementPresent(driver, 5, "//iframe[@id='game21Frame']");
 		toto21Page.toto21BackToHomePage();
 		
 		DriverUtil.waitForElementPresent(driver, 3, "//div[@class='tl_header_bot_row_fix flex']");
 		
 	}
 	
-//	@Test(dependsOnMethods = { "testToto21Button" })
+	@Test
 	public void testDominoButton() {
 		
 		TotoGuestPage guest = new TotoGuestPage(driver);
 		guest.openGamesDropDown();
-		guest.openDominoPage();
 		TotoDominoPage dominoPage = guest.openDominoPage();
-//		DriverUtil.waitForElementPresent(driver, 5, "//div[@class='dominoIcon headerIcon']");
+		DriverUtil.waitForElementPresent(driver, 3, "//button[text()='Games' and contains(@class, 'active')]");
+		DriverUtil.waitForElementPresent(driver, 5, "//iframe[@class='domino_p2p']");
 		dominoPage.dominoBackToHomePage();
 		
 		DriverUtil.waitForElementPresent(driver, 3, "//div[@class='tl_header_bot_row_fix flex']");
 		
 	}
-	//(dependsOnMethods = { "testDominoButton" })
+	
 	@Test
 	public void testKenoButton() {
 		
 		TotoGuestPage guest = new TotoGuestPage(driver);
 		guest.openKenoDropDown();
 		TotoKenoPage kenoPage  = guest.openKenoPage();
-		DriverUtil.waitForElementPresent(driver, 5, "//div[@class='top-players-container-header-item for-keno']");
+		DriverUtil.waitForElementPresent(driver, 3, "//button[text()='Keno' and contains(@class, 'active')]");
+		DriverUtil.waitForElementPresent(driver, 5, "//iframe[@id='betongamesFrame']");
 		kenoPage.kenoBackToHomePage();
 		
 		DriverUtil.waitForElementPresent(driver, 3, "//div[@class='tl_header_bot_row_fix flex']");
 		
 	}
 	
-//	@Test(dependsOnMethods = { "testKenoButton" })
+	@Test
 	public void testGoldKenoButton() {
 		
 		TotoGuestPage guest = new TotoGuestPage(driver);
 		guest.openKenoDropDown();
-		guest.openGoldKenoPage();
-		TotoGoldKenoPage backToHomePage = new TotoGoldKenoPage(driver);
-//		DriverUtil.waitForElementPresent(driver, 5, "//div[@class='space-img']");
-		backToHomePage.goldKenoBackToHomePage();
+		TotoGoldKenoPage goldKenoPage = guest.openGoldKenoPage();
+		DriverUtil.waitForElementPresent(driver, 5, "//iframe[@class='flgGames_frame']");
+		goldKenoPage.goldKenoBackToHomePage();
 		
 		DriverUtil.waitForElementPresent(driver, 3, "//div[@class='tl_header_bot_row_fix flex']");
 		
 	}
 	
-//	@Test(dependsOnMethods = { "testGoldKenoButton" })
+	@Test
 	public void testCrashButton() {
 		
 		TotoGuestPage guest = new TotoGuestPage(driver);
 		guest.openCrashPage();
 		TotoCrashPage backToHomePage = new TotoCrashPage(driver);
-//		DriverUtil.waitForElementPresent(driver, 5, "//div[@class='top-players-container-header-item for-crash']");
+		DriverUtil.waitForElementPresent(driver, 3, "//a[text()='Crash' and contains(@class, 'active')]");
+		DriverUtil.waitForElementPresent(driver, 5, "//iframe[@id='betongamesFrame']");
+		
 		backToHomePage.crashBackToHomePage();
 		
 		DriverUtil.waitForElementPresent(driver, 3, "//div[@class='tl_header_bot_row_fix flex']");
 		
 	}
 	
-//	@Test(dependsOnMethods = { "testCrashButton" })
+	@Test
 	public void testHiLoButton() {
 		
 		TotoGuestPage guest = new TotoGuestPage(driver);
 		guest.openHiLoPage();
 		TotoHiLoPage backToHomePage = new TotoHiLoPage(driver);
-//		DriverUtil.waitForElementPresent(driver, 5, "//div[@class='top-players-container-header-item for-hilo']");
+		DriverUtil.waitForElementPresent(driver, 3, "//a[text()='HI LO' and contains(@class, 'active')]");
+		DriverUtil.waitForElementPresent(driver, 5, "//iframe[@id='_HiloFrame']");
 		backToHomePage.hiLoBackToHomePage();
 		
 		DriverUtil.waitForElementPresent(driver, 3, "//div[@class='tl_header_bot_row_fix flex']");

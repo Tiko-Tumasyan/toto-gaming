@@ -8,7 +8,7 @@
 <parameter name="fbPassword" value="Qa  2019"></parameter>
 	<test name="First Test Example">
 		<classes>
-			<class name="am.qa.totogaming.tests.menus.ToogamingFooterLinksBanner" />
+			<class name="am.qa.totogaming.tests.menus.TotogamingMainButtonsMenu" />
 		</classes>
 	</test>
 </suite>

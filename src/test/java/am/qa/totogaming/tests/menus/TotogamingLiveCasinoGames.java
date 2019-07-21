@@ -22,7 +22,7 @@ public class TotogamingLiveCasinoGames extends TotogamingBaseTest {
 		driver.switchTo().window(promoTab.get(0));
 	}
 	
-	@Test(dependsOnMethods="blackJackTest")
+	@Test
 	public void rouletteTest() {
 		TotoGuestPage guest = new TotoGuestPage(driver);
 		guest.openRoulettePage();
@@ -34,7 +34,7 @@ public class TotogamingLiveCasinoGames extends TotogamingBaseTest {
 		driver.switchTo().window(promoTab.get(0));
 	}
 	
-	@Test(dependsOnMethods="rouletteTest")
+	@Test
 	public void baccaratTest() {
 		TotoGuestPage guest = new TotoGuestPage(driver);
 		guest.openBaccaratPage();
@@ -46,7 +46,7 @@ public class TotogamingLiveCasinoGames extends TotogamingBaseTest {
 		driver.switchTo().window(promoTab.get(0));
 	}
 	
-	@Test(dependsOnMethods="baccaratTest")
+	@Test
 	public void dreamCatcherTest() {
 		TotoGuestPage guest = new TotoGuestPage(driver);
 		guest.openDreamCatcherPage();
