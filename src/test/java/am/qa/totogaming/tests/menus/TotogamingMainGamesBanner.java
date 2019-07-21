@@ -105,8 +105,8 @@ public class TotogamingMainGamesBanner extends TotogamingBaseTest {
 	@Test
 	public void testPokerBanner() throws Exception {
 		String totoPassword = ReadFromFileUtil.getProperties("password");
-		 String totoUsername =	ReadFromFileUtil.getProperties("user");
-		
+		String totoUsername = ReadFromFileUtil.getProperties("fakeUser");
+
 		TotoGuestPage guestPage = new TotoGuestPage(driver);
 		TotoLoginWindow totoLoginWindow = guestPage.openLoginDialog();
 		totoLoginWindow.fillTotoLoginCredentials(totoUsername, totoPassword);
