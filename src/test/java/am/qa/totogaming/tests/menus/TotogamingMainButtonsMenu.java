@@ -1,7 +1,6 @@
 package am.qa.totogaming.tests.menus;
 
 
-import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import am.qa.totogaming.main.menu.buttons.pages.TotoBaccaratPage;
@@ -23,6 +22,7 @@ import am.qa.totogaming.main.menu.buttons.pages.TotoLucky5Page;
 import am.qa.totogaming.main.menu.buttons.pages.TotoLucky6Page;
 import am.qa.totogaming.main.menu.buttons.pages.TotoLucky7Page;
 import am.qa.totogaming.main.menu.buttons.pages.TotoLuckyStreakLiveCasinoPage;
+import am.qa.totogaming.main.menu.buttons.pages.TotoPokerPage;
 import am.qa.totogaming.main.menu.buttons.pages.TotoSportLoto5From36Page;
 import am.qa.totogaming.main.menu.buttons.pages.TotoSportLoto7From42Page;
 import am.qa.totogaming.main.menu.buttons.pages.TotoSportsPage;
@@ -31,8 +31,11 @@ import am.qa.totogaming.main.menu.buttons.pages.TotoToto21Page;
 import am.qa.totogaming.main.menu.buttons.pages.TotoWarOfBetsPage;
 import am.qa.totogaming.main.menu.buttons.pages.TotoWheelPage;
 import am.qa.totogaming.page.guest.TotoGuestPage;
+import am.qa.totogaming.page.login.TotoLoginWindow;
+import am.qa.totogaming.page.member.TotoMemberPage;
 import am.qa.totogaming.test.base.TotogamingBaseTest;
 import am.qa.totogaming.util.DriverUtil;
+import am.qa.totogaming.util.ReadFromFileUtil;
 
 public class TotogamingMainButtonsMenu extends TotogamingBaseTest{
 	
@@ -293,27 +296,26 @@ public class TotogamingMainButtonsMenu extends TotogamingBaseTest{
 		DriverUtil.waitForElementPresent(driver, 3, "//div[@class='tl_header_bot_row_fix flex']");
 	}
 		
-	@Parameters({"totoUsername", "totoPassword"})
-//	@Test(dependsOnMethods = { "testFastGamesButton" })
-	public void testPokerButton(String totoUsername, String totoPassword) {
-//		TotoGuestPage guest = new TotoGuestPage(driver);
-//		guest.openPokerPage();
-//		TotoLoginWindow totoLoginWindow = new TotoLoginWindow(driver);
-//		totoLoginWindow.fillTotoLoginCredentials(totoUsername, totoPassword);
-//		totoLoginWindow.submitTotoLoginForm();
-//		
-//		TotoMemberPage member = new TotoMemberPage(driver);
-//		
-//		DriverUtil.waitForElementPresent(driver, 3, "//div[contains(@class, 'sportHeaderLang')]");
-//		
-//		member.openSportsLangDropDown();
-//		member.selectSportsEngLang();
-//		DriverUtil.waitForElementPresent(driver, 3, "//div[contains(@class, 'tg-flag-en')]");
-//		
-//		member.openSportsPokerPage();
-//		
-//		TotoPokerPage pokerPage = new TotoPokerPage(driver);
-//		pokerPage.clickOnPokerLogin();
+	@Test
+	public void testPokerButton() throws Exception {
+		String totoPassword = ReadFromFileUtil.getProperties("password");
+		 String totoUsername =	ReadFromFileUtil.getProperties("user");
+		
+		TotoGuestPage guestPage = new TotoGuestPage(driver);
+		TotoLoginWindow totoLoginWindow = guestPage.openLoginDialog();
+		totoLoginWindow.fillTotoLoginCredentials(totoUsername, totoPassword);
+		totoLoginWindow.submitTotoLoginForm();
+		DriverUtil.waitForElementPresent(driver, 3, "//div[@class='tl_logged_in flex']");
+		
+		TotoMemberPage memberPage = new TotoMemberPage(driver);
+		
+		TotoPokerPage pokerPage = memberPage.openMemberPokerPage();
+		
+		DriverUtil.waitForElementPresent(driver, 3, "//a[text()='Poker' and contains(@class, 'active')]");
+		DriverUtil.waitForElementPresent(driver, 3, "//iframe[@id='_EventBetFrame']");
+		
+		pokerPage.pokerBackToHomePage();
+		DriverUtil.waitForElementPresent(driver, 3, "//div[@class='tl_header_bot_row_fix flex']");
 	}
 	
 	@Test

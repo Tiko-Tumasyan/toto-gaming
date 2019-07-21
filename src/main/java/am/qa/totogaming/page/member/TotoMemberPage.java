@@ -4,7 +4,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-import am.qa.social.media.toto.page.FbTotoPage;
 import am.qa.totogaming.main.menu.buttons.pages.TotoPokerPage;
 import am.qa.totogaming.page.guest.TotoGuestPage;
 
@@ -34,8 +33,8 @@ public class TotoMemberPage extends TotoGuestPage {
 	@FindBy(xpath="//div[@title='Notifications']")
 	WebElement notificationsBtn;
 	
-	@FindBy(xpath="//a[contains(@class, 'tg--poker')]")
-	WebElement sportsPokerLink;
+	@FindBy(xpath="//a[text()='Poker']")
+	WebElement pokerLink;
 		
 	
 	public void openLangDropDown() {
@@ -62,8 +61,8 @@ public class TotoMemberPage extends TotoGuestPage {
 		notificationsBtn.click();
 	}
 	
-	public TotoPokerPage openSportsPokerPage() {
-		sportsPokerLink.click();
+	public TotoPokerPage openMemberPokerPage() {
+		pokerLink.click();
 		return new TotoPokerPage(driver);
 	}
 }
