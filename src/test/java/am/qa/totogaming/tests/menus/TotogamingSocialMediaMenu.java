@@ -2,13 +2,13 @@ package am.qa.totogaming.tests.menus;
 
 import java.util.ArrayList;
 
-import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
 import am.qa.facebook.login.FacebookLoginPage;
 import am.qa.totogaming.page.guest.TotoGuestPage;
 import am.qa.totogaming.test.base.TotogamingBaseTest;
 import am.qa.totogaming.util.DriverUtil;
+import am.qa.totogaming.util.ReadFromFileUtil;
 
 public class TotogamingSocialMediaMenu extends TotogamingBaseTest {
 
@@ -23,7 +23,7 @@ public class TotogamingSocialMediaMenu extends TotogamingBaseTest {
 		driver.switchTo().window(promoTab.get(0));
 	}
 
-	@Test(dependsOnMethods = "twitterTest")
+	@Test
 	public void instagramTest() {
 		TotoGuestPage guest = new TotoGuestPage(driver);
 		guest.openInstaTotoPage();
@@ -34,7 +34,7 @@ public class TotogamingSocialMediaMenu extends TotogamingBaseTest {
 		driver.switchTo().window(promoTab.get(0));
 	}
 
-	@Test(dependsOnMethods = "instagramTest")
+	@Test
 	public void youtubeTest() {
 		TotoGuestPage guest = new TotoGuestPage(driver);
 		guest.openYoutubeTotoPage();
@@ -45,7 +45,7 @@ public class TotogamingSocialMediaMenu extends TotogamingBaseTest {
 		driver.switchTo().window(promoTab.get(0));
 	}
 
-	@Test(dependsOnMethods = "youtubeTest")
+	@Test
 	public void telegramTest() {
 		TotoGuestPage guest = new TotoGuestPage(driver);
 		guest.openTelegramTotoPage();
@@ -56,30 +56,33 @@ public class TotogamingSocialMediaMenu extends TotogamingBaseTest {
 		driver.switchTo().window(promoTab.get(0));
 	}
 
-	@Test(dependsOnMethods = "telegramTest")
+	@Test
 	public void okTest() {
 		TotoGuestPage guest = new TotoGuestPage(driver);
 		guest.openOkTotoPage();
 		ArrayList<String> promoTab = new ArrayList<String>(driver.getWindowHandles());
 		driver.switchTo().window(promoTab.get(1));
 		DriverUtil.waitForElementPresent(driver, 3, "//div[@class='mctc_name']//h1[contains(text(), 'Toto')]");
+		driver.close();
+		driver.switchTo().window(promoTab.get(0));
 	}
 
-	@Test(dependsOnMethods = "okTest")
-	@Parameters({ "fbUsername", "fbPassword" })
-	public void fbTest(String fbUsername, String fbPassword) {
+	@Test
+	public void fbTest() throws Exception {
+		
+		String fbUsername = ReadFromFileUtil.getProperties("fbUsername");
+		String fbPassword = ReadFromFileUtil.getProperties("fbPassword");
+		
 		driver.get("https://en-gb.facebook.com/login/");
 		FacebookLoginPage fbLoginPage = new FacebookLoginPage(driver);
 		fbLoginPage.fillFbLoginCredentials(fbUsername, fbPassword);
 		fbLoginPage.submitFbLoginForm();
-		ArrayList<String> promoTab = new ArrayList<String>(driver.getWindowHandles());
-		driver.close();
-		driver.switchTo().window(promoTab.get(0));
+		driver.get("https://totogaming.am");
 		TotoGuestPage guest = new TotoGuestPage(driver);
 		guest.openFbTotoPage();
-		promoTab = new ArrayList<String>(driver.getWindowHandles());
+		ArrayList<String> promoTab = new ArrayList<String> (driver.getWindowHandles());
 		driver.switchTo().window(promoTab.get(1));
-		DriverUtil.waitForElementPresent(driver, 3, "//div[@id='entity_sidebar']//span[contains(text(), 'TotoGaming')]");
+		DriverUtil.waitForElementPresent(driver, 20, "//div[@id='entity_sidebar']//span[contains(text(), 'TotoGaming')]");
 		driver.close();
 		driver.switchTo().window(promoTab.get(0));
 	}

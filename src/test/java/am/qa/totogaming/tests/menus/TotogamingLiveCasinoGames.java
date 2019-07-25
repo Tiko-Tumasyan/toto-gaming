@@ -16,7 +16,7 @@ public class TotogamingLiveCasinoGames extends TotogamingBaseTest {
 		guest.openBlackJackPage();
 		ArrayList<String> promoTab = new ArrayList<String>(driver.getWindowHandles());
 		driver.switchTo().window(promoTab.get(1));
-		DriverUtil.waitForElementPresent(driver, 5, "//div[@data-role='tables-inner-scrollable']");
+		DriverUtil.waitForElementPresent(driver, 5, "//div[@class='evolutionFrame_block']");
 //		DriverUtil.waitForElementPresent(driver, 3, "//div[@data-game='blackjack' and contains(@class, 'active')]");
 		driver.close();
 		driver.switchTo().window(promoTab.get(0));
@@ -28,7 +28,7 @@ public class TotogamingLiveCasinoGames extends TotogamingBaseTest {
 		guest.openRoulettePage();
 		ArrayList<String> promoTab = new ArrayList<String>(driver.getWindowHandles());
 		driver.switchTo().window(promoTab.get(1));
-		DriverUtil.waitForElementPresent(driver, 5, "//div[@data-role='tables-inner-scrollable']");
+		DriverUtil.waitForElementPresent(driver, 5, "//div[@class='evolutionFrame_block']");
 //		DriverUtil.waitForElementPresent(driver, 3, "//div[@data-game='roulette' and contains(@class, 'active')]");
 		driver.close();
 		driver.switchTo().window(promoTab.get(0));
@@ -40,7 +40,7 @@ public class TotogamingLiveCasinoGames extends TotogamingBaseTest {
 		guest.openBaccaratPage();
 		ArrayList<String> promoTab = new ArrayList<String>(driver.getWindowHandles());
 		driver.switchTo().window(promoTab.get(1));
-		DriverUtil.waitForElementPresent(driver, 5, "//div[@data-role='tables-inner-scrollable']");
+		DriverUtil.waitForElementPresent(driver, 5, "//div[@class='evolutionFrame_block']");
 //		DriverUtil.waitForElementPresent(driver, 3, "//div[@data-game='baccarat' and contains(@class, 'active')]");
 		driver.close();
 		driver.switchTo().window(promoTab.get(0));
@@ -52,7 +52,7 @@ public class TotogamingLiveCasinoGames extends TotogamingBaseTest {
 		guest.openDreamCatcherPage();
 		ArrayList<String> promoTab = new ArrayList<String>(driver.getWindowHandles());
 		driver.switchTo().window(promoTab.get(1));
-		DriverUtil.waitForElementPresent(driver, 5, "//div[@data-role='tables-inner-scrollable']");
+		DriverUtil.waitForElementPresent(driver, 5, "//div[@class='evolutionFrame_block']");
 //		DriverUtil.waitForElementPresent(driver, 3, "//div[@data-game='blackjack' and contains(@class, 'active')]");
 		driver.close();
 		driver.switchTo().window(promoTab.get(0));

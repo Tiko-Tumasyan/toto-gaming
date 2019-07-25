@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="P2 Tests" verbose="1">
+	<test name="Footer Links, Social Media">
+		<classes>
+			<class name="am.qa.totogaming.tests.menus.ToogamingFooterLinksBanner" />
+			<class name="am.qa.totogaming.tests.menus.TotogamingSocialMediaMenu" />
+			<methods>
+			</methods>
+		</classes>
+	</test>
+</suite>

@@ -24,7 +24,7 @@ public class TotogamingMainMenu extends TotogamingBaseTest{
 		driver.switchTo().window(promoTab.get(0));
 		
 	}
-	@Test(dependsOnMethods = { "testPromotionsButton" })
+	@Test
 	public void testTotoExpertLink() {
 		
 		
@@ -39,32 +39,32 @@ public class TotogamingMainMenu extends TotogamingBaseTest{
 		
 	}
 	
-	@Test(dependsOnMethods = { "testTotoExpertLink" })
-	public void testWatch() {
-		
-	}
+//	@Test(dependsOnMethods = { "testTotoExpertLink" })
+//	public void testWatch() {
+//		
+//	}
 	
-	@Test(dependsOnMethods = { "testWatch" })
+	@Test
 	public void testRegisterButton() {
 		TotoGuestPage guest = new TotoGuestPage(driver);
-		guest.openRegDialog();
+		
+		TotoRegWindow regWinClose = guest.openRegDialog();
 		
 		DriverUtil.waitForElementPresent(driver, 3, "//form[@automation='register_form']");
 		
-		TotoRegWindow regWinClose = new TotoRegWindow(driver);
 		regWinClose.closeRegWin();
 		
 	}
 	
-	@Test(dependsOnMethods = { "testRegisterButton" })
+	@Test
 	public void testLogInButton() {
 		
 		TotoGuestPage guest = new TotoGuestPage(driver);
-		guest.openLoginDialog();
+		
+		TotoLoginWindow loginWin = guest.openLoginDialog();
 		
 		DriverUtil.waitForElementPresent(driver, 3, "//div[@id='login_container']");
 		
-		TotoLoginWindow loginWin = new TotoLoginWindow(driver);
 		loginWin.closeLoginWin();
 		
 	}

@@ -263,6 +263,7 @@ public class TotogamingMainButtonsMenu extends TotogamingBaseTest{
 		
 		TotoSportLoto7From42Page sportLoto7From42Page = guest.openTotoSportLoto7From42Page();
 		DriverUtil.waitForElementPresent(driver, 3, "//div[@id='superloto_div_iframe']");
+		DriverUtil.waitForElementPresent(driver, 3, "//li[@class='lottery active']//span[@class='lottery_name ' and contains(text(), 'Sportloto 7 from 42')]");
 		sportLoto7From42Page.sportLoto7BackToHomePage();
 		
 		DriverUtil.waitForElementPresent(driver, 3, "//div[@class='tl_header_bot_row_fix flex']");

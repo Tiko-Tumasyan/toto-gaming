@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="P1 Tests" verbose="1">
+	<test name="Games, Menus, Links">
+		<classes>
+			<class name="am.qa.totogaming.tests.menus.TotogamingLiveCasinoGames" />
+			<class name="am.qa.totogaming.tests.menus.TotogamingMainButtonsMenu" />
+			<class name="am.qa.totogaming.tests.menus.TotogamingMainGamesBanner" />
+			<class name="am.qa.totogaming.tests.menus.TotogamingTopCasinoGamesBanner" />
+			<methods>
+			</methods>
+		</classes>
+	</test>
+</suite>

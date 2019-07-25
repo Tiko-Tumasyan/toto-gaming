@@ -105,13 +105,13 @@ public class TotogamingMainGamesBanner extends TotogamingBaseTest {
 	@Test
 	public void testPokerBanner() throws Exception {
 		String totoPassword = ReadFromFileUtil.getProperties("password");
-		String totoUsername = ReadFromFileUtil.getProperties("fakeUser");
+		String totoUsername = ReadFromFileUtil.getProperties("user");
 
 		TotoGuestPage guestPage = new TotoGuestPage(driver);
 		TotoLoginWindow totoLoginWindow = guestPage.openLoginDialog();
 		totoLoginWindow.fillTotoLoginCredentials(totoUsername, totoPassword);
 		totoLoginWindow.submitTotoLoginForm();
-		DriverUtil.waitForElementPresent(driver, 3, "//div[@class='tl_logged_in flex']");
+		DriverUtil.waitForElementPresent(driver, 6, "//div[@class='tl_logged_in flex']");
 		
 		TotoMemberPage memberPage = new TotoMemberPage(driver);
 		

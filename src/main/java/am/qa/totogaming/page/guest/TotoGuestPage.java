@@ -183,10 +183,10 @@ public class TotoGuestPage extends PageObject {
 	WebElement dominoLink;
 	
 	@FindBy(xpath="//button[text()='Keno']")
-	WebElement kenoLink;
+	WebElement kenoDropDownLink;
 	
 	@FindBy(xpath="//div[contains(@class, 'shadow')]//a[text()='KENO']")
-	WebElement kenoDropDownLink;
+	WebElement kenoLink;
 	
 	@FindBy(xpath="//div[contains(@class, 'shadow')]//a[text()='Gold Keno']")
 	WebElement goldKenoLink;
@@ -514,12 +514,12 @@ public class TotoGuestPage extends PageObject {
 	
 	//Keno Link x2
 	public  TotoGuestPage openKenoDropDown() {
-		kenoLink.click();
+		kenoDropDownLink.click();
 		return new TotoGuestPage(driver);
 	}
 	
 	public  TotoKenoPage openKenoPage() {
-		kenoDropDownLink.click();
+		kenoLink.click();
 		return new TotoKenoPage(driver);
 	}
 	
