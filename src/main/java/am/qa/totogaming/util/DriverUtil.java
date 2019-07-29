@@ -1,6 +1,5 @@
 package am.qa.totogaming.util;
 
-import java.util.HashMap;
 import java.util.Set;
 
 import org.openqa.selenium.By;
@@ -27,9 +26,4 @@ public class DriverUtil {
 		   }
 	}
 	
-	public static HashMap countriesMap = new HashMap<String, Integer>();
-	
-	static  {
-		countriesMap.put("Armenia", 257);
-	}
 }

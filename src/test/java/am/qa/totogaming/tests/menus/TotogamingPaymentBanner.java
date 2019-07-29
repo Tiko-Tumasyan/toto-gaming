@@ -4,105 +4,138 @@ import java.util.ArrayList;
 
 import org.testng.annotations.Test;
 
-import am.qa.facebook.login.FacebookLoginPage;
 import am.qa.totogaming.page.guest.TotoGuestPage;
 import am.qa.totogaming.test.base.TotogamingBaseTest;
 import am.qa.totogaming.util.DriverUtil;
-import am.qa.totogaming.util.ReadFromFileUtil;
 
-public class TotogamingSocialMediaMenu extends TotogamingBaseTest {
+public class TotogamingPaymentBanner extends TotogamingBaseTest {
 
-//	TC ID 49
+//	TC ID 85
 	@Test
-	public void twitterTest() {
+	public void testArCaPaymentLink() {
+
 		TotoGuestPage guest = new TotoGuestPage(driver);
-		guest.openTwitterTotoPage();
+		guest.openArCaPaymentPage();
+
 		ArrayList<String> promoTab = new ArrayList<String>(driver.getWindowHandles());
 		driver.switchTo().window(promoTab.get(1));
-		DriverUtil.waitForElementPresent(driver, 3, "//div[@class='ProfileHeaderCard']//span[@class='username u-dir']");
-		driver.close();
-		driver.switchTo().window(promoTab.get(0));
-	}
 
-//	TC ID 48
-	@Test
-	public void instagramTest() {
-		TotoGuestPage guest = new TotoGuestPage(driver);
-		guest.openInstaTotoPage();
-		ArrayList<String> promoTab = new ArrayList<String>(driver.getWindowHandles());
-		driver.switchTo().window(promoTab.get(1));
-		DriverUtil.waitForElementPresent(driver, 3, "//h1[text()='TotoGaming']");
+		DriverUtil.waitForElementPresent(driver, 3, "//a[contains(@title, 'ArCa')]");
 		driver.close();
 		driver.switchTo().window(promoTab.get(0));
-	}
 
-//	TC ID 50
-	@Test
-	public void youtubeTest() {
-		TotoGuestPage guest = new TotoGuestPage(driver);
-		guest.openYoutubeTotoPage();
-		ArrayList<String> promoTab = new ArrayList<String>(driver.getWindowHandles());
-		driver.switchTo().window(promoTab.get(1));
-		DriverUtil.waitForElementPresent(driver, 3,"//h1[@id='channel-title-container']//span[contains(text(), 'TOTO')]");
-		driver.close();
-		driver.switchTo().window(promoTab.get(0));
-	}
-
-//	TC ID 51
-	@Test
-	public void telegramTest() {
-		TotoGuestPage guest = new TotoGuestPage(driver);
-		guest.openTelegramTotoPage();
-		ArrayList<String> promoTab = new ArrayList<String>(driver.getWindowHandles());
-		driver.switchTo().window(promoTab.get(1));
-		DriverUtil.waitForElementPresent(driver, 3, "//div[@dir='auto' and contains(text(), 'Toto')]");
-		driver.close();
-		driver.switchTo().window(promoTab.get(0));
 	}
 	
-//	TC ID 52
+//	TC ID 86
 	@Test
-	public void vkTest() {
+	public void testIDramPaymentLink() {
+
 		TotoGuestPage guest = new TotoGuestPage(driver);
-		guest.openVkTotoPage();
+		guest.openIDramPaymentPage();
+
 		ArrayList<String> promoTab = new ArrayList<String>(driver.getWindowHandles());
 		driver.switchTo().window(promoTab.get(1));
-		DriverUtil.waitForElementPresent(driver, 3, "//h2[@class='page_name' and contains(text(), 'TotoGaming')]");
+
+		DriverUtil.waitForElementPresent(driver, 3, "//a[@class='button-custom login' and contains(@href, 'idram')]");
 		driver.close();
 		driver.switchTo().window(promoTab.get(0));
-	}
 
-//	TC ID 53
-	@Test
-	public void okTest() {
+	}
+	
+//	TC ID 87
+//	@Test
+	public void testBankPaymentLink() {
+
 		TotoGuestPage guest = new TotoGuestPage(driver);
-		guest.openOkTotoPage();
+		guest.openBankPaymentPage();
+
 		ArrayList<String> promoTab = new ArrayList<String>(driver.getWindowHandles());
 		driver.switchTo().window(promoTab.get(1));
-		DriverUtil.waitForElementPresent(driver, 3, "//div[@class='mctc_name']//h1[contains(text(), 'Toto')]");
+
+//		DriverUtil.waitForElementPresent(driver, 3, "");
 		driver.close();
 		driver.switchTo().window(promoTab.get(0));
-	}
 
-//	TC ID 54
+	}
+	
+//	TC ID 88
 	@Test
-	public void fbTest() throws Exception {
-		
-		String fbUsername = ReadFromFileUtil.getProperties("fbUsername");
-		String fbPassword = ReadFromFileUtil.getProperties("fbPassword");
-		
-		driver.get("https://en-gb.facebook.com/login/");
-		FacebookLoginPage fbLoginPage = new FacebookLoginPage(driver);
-		fbLoginPage.fillFbLoginCredentials(fbUsername, fbPassword);
-		fbLoginPage.submitFbLoginForm();
-		driver.get("https://totogaming.am");
+	public void testMobiDramPaymentLink() {
+
 		TotoGuestPage guest = new TotoGuestPage(driver);
-		guest.openFbTotoPage();
-		ArrayList<String> promoTab = new ArrayList<String> (driver.getWindowHandles());
+		guest.openMobiDramPaymentPage();
+
+		ArrayList<String> promoTab = new ArrayList<String>(driver.getWindowHandles());
 		driver.switchTo().window(promoTab.get(1));
-		DriverUtil.waitForElementPresent(driver, 20, "//div[@id='entity_sidebar']//span[contains(text(), 'TotoGaming')]");
+
+		DriverUtil.waitForElementPresent(driver, 3, "//a[contains(@href, 'login.mobidram')]");
 		driver.close();
 		driver.switchTo().window(promoTab.get(0));
-	}
 
+	}
+	
+//	TC ID 89
+	@Test
+	public void testTelCellPaymentLink() {
+
+		TotoGuestPage guest = new TotoGuestPage(driver);
+		guest.openTelCellPaymentPage();
+
+		ArrayList<String> promoTab = new ArrayList<String>(driver.getWindowHandles());
+		driver.switchTo().window(promoTab.get(1));
+
+		DriverUtil.waitForElementPresent(driver, 3, "//body[@class='telcell']");
+		driver.close();
+		driver.switchTo().window(promoTab.get(0));
+
+	}
+	
+//	TC ID 90
+	@Test
+	public void testEasyPayPaymentLink() {
+
+		TotoGuestPage guest = new TotoGuestPage(driver);
+		guest.openEasyPayPaymentPage();
+
+		ArrayList<String> promoTab = new ArrayList<String>(driver.getWindowHandles());
+		driver.switchTo().window(promoTab.get(1));
+
+		DriverUtil.waitForElementPresent(driver, 3, "//div[@class='top-baner-contain']//img[contains(@src, 'easypay')]");
+		driver.close();
+		driver.switchTo().window(promoTab.get(0));
+
+	}
+	
+//	TC ID 91
+//	@Test
+	public void testVisaMasterPaymentLink() {
+
+		TotoGuestPage guest = new TotoGuestPage(driver);
+		guest.openVisaMasterPaymentPage();
+
+		ArrayList<String> promoTab = new ArrayList<String>(driver.getWindowHandles());
+		driver.switchTo().window(promoTab.get(1));
+
+//		DriverUtil.waitForElementPresent(driver, 3, "");
+		driver.close();
+		driver.switchTo().window(promoTab.get(0));
+
+	}
+	
+//	TC ID 92
+//	@Test
+	public void testCashAmdPaymentLink() {
+
+		TotoGuestPage guest = new TotoGuestPage(driver);
+		guest.openCashAmdPaymentPage();
+
+		ArrayList<String> promoTab = new ArrayList<String>(driver.getWindowHandles());
+		driver.switchTo().window(promoTab.get(1));
+
+//		DriverUtil.waitForElementPresent(driver, 3, "");
+		driver.close();
+		driver.switchTo().window(promoTab.get(0));
+
+	}
+	
 }

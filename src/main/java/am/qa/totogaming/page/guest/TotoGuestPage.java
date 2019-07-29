@@ -69,8 +69,16 @@ import am.qa.totogaming.main.menu.buttons.pages.TotoWheelPage;
 import am.qa.totogaming.page.base.PageObject;
 import am.qa.totogaming.page.login.TotoLoginWindow;
 import am.qa.totogaming.page.promotions.TotogamingPromotionsPage;
-import am.qa.totogaming.page.registration.TotoRegWindow;
+import am.qa.totogaming.reg.TotoRegWindow;
 import am.qa.totogaming.page.toto.expert.TotogamingTotoExpertPage;
+import am.qa.totogaming.payment.pages.ArCaPaymentPage;
+import am.qa.totogaming.payment.pages.BankPaymentPage;
+import am.qa.totogaming.payment.pages.CashAmdPaymentPage;
+import am.qa.totogaming.payment.pages.EasyPayPaymentPage;
+import am.qa.totogaming.payment.pages.IDramPaymentPage;
+import am.qa.totogaming.payment.pages.MobiDramPaymentPage;
+import am.qa.totogaming.payment.pages.TelCellPaymentPage;
+import am.qa.totogaming.payment.pages.VisaMasterPaymentPage;
 import am.qa.totogaming.top.casino.games.buttons.pages.BookOfSunPage;
 import am.qa.totogaming.top.casino.games.buttons.pages.LuckyLadysCharmPage;
 import am.qa.totogaming.top.casino.games.buttons.pages.SugarPopPage;
@@ -97,6 +105,9 @@ public class TotoGuestPage extends PageObject {
 	
 	@FindBy(xpath="//a[@class='flex en']")
 	WebElement engLangSelect;
+	
+	@FindBy(xpath="//a[@class='flex hy']")
+	WebElement armLangSelect;
 	
 	@FindBy(xpath="//i[@id='icon_promotions']")
 	WebElement promotionsBtn;
@@ -344,12 +355,36 @@ public class TotoGuestPage extends PageObject {
 	@FindBy(xpath="//ul[@class='tl_footer_links_row']//a[text() = 'Contact Us']")
 	WebElement footerContactUsLink;
 	
+	@FindBy(xpath="//a[contains(@class, 'arca')]")
+	WebElement arcaPaymentLink;
+	
+	@FindBy(xpath="//a[contains(@class, 'edram')]")
+	WebElement iDramPaymentLink;
+	
+	@FindBy(xpath="//a[contains(@class, 'bank')]")
+	WebElement bankPaymentLink;
+	
+	@FindBy(xpath="//a[contains(@class, 'mobidram')]")
+	WebElement mobiDramPaymentLink;
+	
+	@FindBy(xpath="//a[contains(@class, 'telcell')]")
+	WebElement telCellPaymentLink;
+	
+	@FindBy(xpath="//a[contains(@class, 'easypay')]")
+	WebElement easyPayPaymentLink;
+	
+	@FindBy(xpath="//a[contains(@class, 'visaMaster')]")
+	WebElement visaMasterPaymentLink;
+	
+	@FindBy(xpath="//a[contains(@class, 'cashAmd')]")
+	WebElement cashAmdPaymentLink;
+	
 	public TotoLoginWindow openLoginDialog() {
 		loginLink.click();
 		return new TotoLoginWindow(driver);
 	}
 	
-	public  TotoRegWindow openRegDialog() {
+	public TotoRegWindow openRegDialog() {
 		regLink.click();
 		return new TotoRegWindow(driver);
 	}
@@ -360,6 +395,10 @@ public class TotoGuestPage extends PageObject {
 	
 	public void selectEngLang() {
 		engLangSelect.click();
+	}
+	
+	public void selectArmLang() {
+		armLangSelect.click();
 	}
 	
 	public  TotogamingPromotionsPage openPromotionsPage() {
@@ -387,11 +426,6 @@ public class TotoGuestPage extends PageObject {
 		return new TotoGuestPage(driver);
 	}
 	
-//	public TotoGuestPage openLiveCasinoDropDown() {
-//		Actions action = new Actions(driver);
-//		action.moveToElement(casinoLink).perform();
-//		return new TotoGuestPage(driver);
-//	}
 	
 	public  TotoLivePage openLivePage() {
 		liveLink.click();
@@ -782,6 +816,46 @@ public class TotoGuestPage extends PageObject {
 	public FooterContactUsPage openFooterContactUsPage() {
 		footerContactUsLink.click();
 		return new FooterContactUsPage(driver);
+	}
+	
+	public ArCaPaymentPage openArCaPaymentPage() {
+		arcaPaymentLink.click();
+		return new ArCaPaymentPage(driver);
+	}
+	
+	public IDramPaymentPage openIDramPaymentPage() {
+		iDramPaymentLink.click();
+		return new IDramPaymentPage(driver);
+	}
+	
+	public BankPaymentPage openBankPaymentPage() {
+		bankPaymentLink.click();
+		return new BankPaymentPage(driver);
+	}
+	
+	public MobiDramPaymentPage openMobiDramPaymentPage() {
+		mobiDramPaymentLink.click();
+		return new MobiDramPaymentPage(driver);
+	}
+	
+	public TelCellPaymentPage openTelCellPaymentPage() {
+		telCellPaymentLink.click();
+		return new TelCellPaymentPage(driver);
+	}
+	
+	public EasyPayPaymentPage openEasyPayPaymentPage() {
+		easyPayPaymentLink.click();
+		return new EasyPayPaymentPage(driver);
+	}
+	
+	public VisaMasterPaymentPage openVisaMasterPaymentPage() {
+		visaMasterPaymentLink.click();
+		return new VisaMasterPaymentPage(driver);
+	}
+	
+	public CashAmdPaymentPage openCashAmdPaymentPage() {
+		cashAmdPaymentLink.click();
+		return new CashAmdPaymentPage(driver);
 	}
 	
 }

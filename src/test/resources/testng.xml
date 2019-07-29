@@ -2,10 +2,9 @@
 <suite name="TestNg" verbose="1">
 	<test name="Tests">
 		<classes>
-			<class name="am.qa.totogaming.tests.menus.TotogamingMainButtonsMenu" />
-		<methods>
-		<include name="testSportLoto7From42Button"/>
-		</methods>>
+			<class name="am.qa.totogaming.tests.menus.TotogamingSocialMediaMenu" />
+			<methods>
+			</methods>
 		</classes>
 	</test>
 </suite>

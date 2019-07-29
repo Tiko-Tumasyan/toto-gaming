@@ -18,6 +18,7 @@ import am.qa.totogaming.util.ReadFromFileUtil;
 
 public class TotogamingMainGamesBanner extends TotogamingBaseTest {
 
+//	TC ID 34
 	@Test
 	public void testSportBanner() {
 
@@ -34,6 +35,7 @@ public class TotogamingMainGamesBanner extends TotogamingBaseTest {
 
 	}
 
+//	TC ID 33
 	@Test
 	public void testSportTournamentBanner() {
 
@@ -48,6 +50,7 @@ public class TotogamingMainGamesBanner extends TotogamingBaseTest {
 
 	}
 
+//	TC ID 35
 	@Test
 	public void testKenoBanner() {
 
@@ -62,6 +65,7 @@ public class TotogamingMainGamesBanner extends TotogamingBaseTest {
 
 	}
 
+//	TC ID 36
 	@Test
 	public void testCasinoBanner() {
 
@@ -76,6 +80,7 @@ public class TotogamingMainGamesBanner extends TotogamingBaseTest {
 
 	}
 
+//	TC ID 37
 	@Test
 	public void testLiveCasinoBanner() {
 
@@ -89,6 +94,7 @@ public class TotogamingMainGamesBanner extends TotogamingBaseTest {
 
 	}
 
+//	TC ID 38
 	@Test
 	public void testBeloteBanner() {
 
@@ -102,6 +108,7 @@ public class TotogamingMainGamesBanner extends TotogamingBaseTest {
 
 	}
 
+//	TC ID 39
 	@Test
 	public void testPokerBanner() throws Exception {
 		String totoPassword = ReadFromFileUtil.getProperties("password");

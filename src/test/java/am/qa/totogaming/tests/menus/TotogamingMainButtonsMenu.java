@@ -39,6 +39,7 @@ import am.qa.totogaming.util.ReadFromFileUtil;
 
 public class TotogamingMainButtonsMenu extends TotogamingBaseTest{
 	
+//	TC ID 1
 	@Test
 	public void testSportsButton() {
 		
@@ -54,6 +55,7 @@ public class TotogamingMainButtonsMenu extends TotogamingBaseTest{
 		DriverUtil.waitForElementPresent(driver, 3, "//div[@class='tl_header_bot_row_fix flex']");
 	}
 	
+//	TC ID 2
 	@Test
 	public void testLiveButton() {
 		
@@ -68,6 +70,7 @@ public class TotogamingMainButtonsMenu extends TotogamingBaseTest{
 		DriverUtil.waitForElementPresent(driver, 3, "//div[@class='tl_header_bot_row_fix flex']");
 	}
 	
+//	TC ID 3
 	@Test
 	public void testCasinoButton() {
 		
@@ -82,6 +85,7 @@ public class TotogamingMainButtonsMenu extends TotogamingBaseTest{
 		DriverUtil.waitForElementPresent(driver, 3, "//div[@class='tl_header_bot_row_fix flex']");
 	}
 	
+//	TC ID 4
 	@Test
 	public void testEvolutionLiveCasinoButton() {
 		
@@ -97,6 +101,7 @@ public class TotogamingMainButtonsMenu extends TotogamingBaseTest{
 		DriverUtil.waitForElementPresent(driver, 3, "//div[@class='tl_header_bot_row_fix flex']");
 	}
 	
+//	TC ID 5
 	@Test
 	public void testLuckyStreakLiveCasinoButton() {
 		
@@ -112,14 +117,14 @@ public class TotogamingMainButtonsMenu extends TotogamingBaseTest{
 		DriverUtil.waitForElementPresent(driver, 3, "//div[@class='tl_header_bot_row_fix flex']");
 	}
 	
-	@Test// ???
+//	TC ID 6
+	@Test
 	public void testLucky7Button() {
 		
 		TotoGuestPage guest = new TotoGuestPage(driver);
 		guest.openTvGamesDropDown();
 		
 		TotoLucky7Page lucky7Page = guest.openTotoLucky7Page();
-//		DriverUtil.waitForElementPresent(driver, 6, "//div[@data-qa='button-game-menu-1']");
 		DriverUtil.waitForElementPresent(driver, 3, "//iframe[@id='betgames_iframe_1']");
 		
 		lucky7Page.lucky7BackToHomePage();
@@ -127,7 +132,8 @@ public class TotogamingMainButtonsMenu extends TotogamingBaseTest{
 		DriverUtil.waitForElementPresent(driver, 3, "//div[@class='tl_header_bot_row_fix flex']");
 	}
 	
-	@Test// ???
+//	TC ID 7
+	@Test
 	public void testLucky6Button() {
 		
 		TotoGuestPage guest = new TotoGuestPage(driver);
@@ -141,7 +147,8 @@ public class TotogamingMainButtonsMenu extends TotogamingBaseTest{
 		
 	}
 	
-	@Test// ???
+//	TC ID 8
+	@Test
 	public void testLucky5Button() {
 		
 
@@ -156,7 +163,8 @@ public class TotogamingMainButtonsMenu extends TotogamingBaseTest{
 		
 	}
 	
-	@Test// ???
+//	TC ID 9
+	@Test
 	public void testDiceButton() {
 		
 		TotoGuestPage guest = new TotoGuestPage(driver);
@@ -170,7 +178,8 @@ public class TotogamingMainButtonsMenu extends TotogamingBaseTest{
 		
 	}
 	
-	@Test// ???
+//	TC ID 10
+	@Test
 	public void testDiceDuelButton() {
 		
 		TotoGuestPage guest = new TotoGuestPage(driver);
@@ -185,7 +194,8 @@ public class TotogamingMainButtonsMenu extends TotogamingBaseTest{
 		
 	}
 	
-	@Test// ???
+//	TC ID 11
+	@Test
 	public void testWheelButton() {
 		
 		TotoGuestPage guest = new TotoGuestPage(driver);
@@ -199,7 +209,8 @@ public class TotogamingMainButtonsMenu extends TotogamingBaseTest{
 		
 	}
 	
-	@Test// ???
+//	TC ID 12
+	@Test
 	public void testBetOnPokerButton() {
 		
 		TotoGuestPage guest = new TotoGuestPage(driver);
@@ -213,7 +224,8 @@ public class TotogamingMainButtonsMenu extends TotogamingBaseTest{
 		
 	}
 	
-	@Test// ???
+//	TC ID 13
+	@Test
 	public void testBaccaratButton() {
 		
 		TotoGuestPage guest = new TotoGuestPage(driver);
@@ -227,7 +239,8 @@ public class TotogamingMainButtonsMenu extends TotogamingBaseTest{
 		
 	}
 	
-	@Test// ???
+//	TC ID 14
+	@Test
 	public void testWarOfBetsButton() {
 		
 		TotoGuestPage guest = new TotoGuestPage(driver);
@@ -241,7 +254,8 @@ public class TotogamingMainButtonsMenu extends TotogamingBaseTest{
 		
 	}
 	
-	@Test// ???
+//	TC ID 15
+	@Test
 	public void testSportLoto5From36Button() {
 		
 		TotoGuestPage guest = new TotoGuestPage(driver);
@@ -255,7 +269,8 @@ public class TotogamingMainButtonsMenu extends TotogamingBaseTest{
 		
 	}
 	
-	@Test// ???
+//	TC ID 16
+	@Test
 	public void testSportLoto7From42Button() {
 		
 		TotoGuestPage guest = new TotoGuestPage(driver);
@@ -263,14 +278,14 @@ public class TotogamingMainButtonsMenu extends TotogamingBaseTest{
 		
 		TotoSportLoto7From42Page sportLoto7From42Page = guest.openTotoSportLoto7From42Page();
 		DriverUtil.waitForElementPresent(driver, 3, "//div[@id='superloto_div_iframe']");
-		DriverUtil.waitForElementPresent(driver, 3, "//li[@class='lottery active']//span[@class='lottery_name ' and contains(text(), 'Sportloto 7 from 42')]");
 		sportLoto7From42Page.sportLoto7BackToHomePage();
 		
 		DriverUtil.waitForElementPresent(driver, 3, "//div[@class='tl_header_bot_row_fix flex']");
 		
 	}
 	
-	@Test//???
+//	TC ID 17
+	@Test
 	public void testSuperJackpotButton() {
 		
 		TotoGuestPage guest = new TotoGuestPage(driver);
@@ -284,6 +299,7 @@ public class TotogamingMainButtonsMenu extends TotogamingBaseTest{
 		
 	}
 	
+//	TC ID 18
 	@Test 
 	public void testFastGamesButton() {
 		
@@ -297,6 +313,7 @@ public class TotogamingMainButtonsMenu extends TotogamingBaseTest{
 		DriverUtil.waitForElementPresent(driver, 3, "//div[@class='tl_header_bot_row_fix flex']");
 	}
 		
+//	TC ID 19
 	@Test
 	public void testPokerButton() throws Exception {
 		String totoPassword = ReadFromFileUtil.getProperties("password");
@@ -319,6 +336,7 @@ public class TotogamingMainButtonsMenu extends TotogamingBaseTest{
 		DriverUtil.waitForElementPresent(driver, 3, "//div[@class='tl_header_bot_row_fix flex']");
 	}
 	
+//	TC ID 20
 	@Test
 	public void testBeloteButton() {
 		
@@ -334,6 +352,7 @@ public class TotogamingMainButtonsMenu extends TotogamingBaseTest{
 		
 	}
 	
+//	TC ID 21
 	@Test
 	public void testBackgammonButton() {
 		
@@ -349,6 +368,7 @@ public class TotogamingMainButtonsMenu extends TotogamingBaseTest{
 		
 	}
 	
+//	TC ID 22
 	@Test
 	public void testToto21Button() {
 		
@@ -363,6 +383,7 @@ public class TotogamingMainButtonsMenu extends TotogamingBaseTest{
 		
 	}
 	
+//	TC ID 23
 	@Test
 	public void testDominoButton() {
 		
@@ -377,6 +398,7 @@ public class TotogamingMainButtonsMenu extends TotogamingBaseTest{
 		
 	}
 	
+//	TC ID 24
 	@Test
 	public void testKenoButton() {
 		
@@ -391,6 +413,7 @@ public class TotogamingMainButtonsMenu extends TotogamingBaseTest{
 		
 	}
 	
+//	TC ID 25
 	@Test
 	public void testGoldKenoButton() {
 		
@@ -404,6 +427,7 @@ public class TotogamingMainButtonsMenu extends TotogamingBaseTest{
 		
 	}
 	
+//	TC ID 26
 	@Test
 	public void testCrashButton() {
 		
@@ -419,6 +443,7 @@ public class TotogamingMainButtonsMenu extends TotogamingBaseTest{
 		
 	}
 	
+//	TC ID 27
 	@Test
 	public void testHiLoButton() {
 		

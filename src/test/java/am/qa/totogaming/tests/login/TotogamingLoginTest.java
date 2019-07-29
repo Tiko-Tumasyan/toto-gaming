@@ -10,6 +10,7 @@ import am.qa.totogaming.util.ReadFromFileUtil;
 
 public class TotogamingLoginTest extends TotogamingBaseTest {
 
+//	TC ID 82
 	@Test
 	public void loginWithIncorrectCredentials() throws Exception {
 
@@ -24,6 +25,7 @@ public class TotogamingLoginTest extends TotogamingBaseTest {
 
 	}
 
+//	TC ID 83
 	@Test
 	public void loginWithCorrectLoginIncorrectPassword() throws Exception {
 		String totoPassword = ReadFromFileUtil.getProperties("fakePassword");
@@ -36,6 +38,7 @@ public class TotogamingLoginTest extends TotogamingBaseTest {
 		DriverUtil.waitForElementPresent(driver, 5, "//span[@class='field-validation-error']");
 	}
 
+//	TC ID 84
 	@Test
 	public void loginWithIncorrectLoginCorrectPassword() throws Exception {
 
